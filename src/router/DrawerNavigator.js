@@ -137,27 +137,30 @@ const DrawerContent = props => {
 
 export default function DrawerNavigator() {
   return (
-    <Drawer.Navigator
-      drawerContent={props => <DrawerContent {...props} />}
-      screenOptions={{
-        headerShown: false,
-        drawerType: 'slide',
-        overlayColor: 'transparent',
-        drawerActiveBackgroundColor: '#6952b0',
-        drawerActiveTintColor: '#6952b0',
-        drawerInactiveTintColor: '#6952b0',
-        sceneContainerStyle: {
-          backgroundColor: '#6952b0',
-        },
-        drawerContentContainerStyle: {
-          backgroundColor: 'black',
-        },
-        drawerStyle: {
-          width: '65%',
-        },
-      }}>
-      <Drawer.Screen name="Screens" component={Screens} />
-    </Drawer.Navigator>
+    <View style={{flex: 1, backgroundColor: '#6952b0'}}>
+      <Drawer.Navigator
+        drawerContent={props => <DrawerContent {...props} />}
+        screenOptions={{
+          headerShown: false,
+          drawerType: 'slide',
+          overlayColor: 'transparent',
+          drawerActiveBackgroundColor: 'transparent',
+          drawerActiveTintColor: 'transparent',
+          drawerInactiveTintColor: 'transparent',
+          sceneContainerStyle: {
+            backgroundColor: 'transparent',
+          },
+          drawerContentContainerStyle: {
+            backgroundColor: 'transparent',
+          },
+          drawerStyle: {
+            width: '65%',
+            backgroundColor: 'transparent',
+          },
+        }}>
+        <Drawer.Screen name="Screens" component={Screens} />
+      </Drawer.Navigator>
+    </View>
   );
 }
 
